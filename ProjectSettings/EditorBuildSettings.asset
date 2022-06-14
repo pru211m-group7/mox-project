@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BackgroudMenu.unity
     guid: 9cbe45ea2766c35478bffbb24b271947
+  - enabled: 1
+    path: Assets/Scenes/BoxDrop.unity
+    guid: d7e343aecf88a5e41b7aae261f47c162
+  - enabled: 1
+    path: Assets/Scenes/SlotMachine.unity
+    guid: eaec52cfc1cf2f84686e585e605e55e2
   m_configObjects: {}
