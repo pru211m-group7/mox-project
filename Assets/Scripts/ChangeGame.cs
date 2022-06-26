@@ -15,6 +15,6 @@ public class ChangeGame : MonoBehaviour
     }
     public void Quiz()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 }
