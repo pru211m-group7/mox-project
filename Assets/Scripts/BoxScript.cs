@@ -80,9 +80,11 @@ public class BoxScript : MonoBehaviour
         ignoreCollision = true;
         ignoreTrigger = true;
 
-        GameplayController.instance.SpawnNewBox();
         GameplayController.instance.CountScore();
-
+        if (!GameplayController.instance.CheckIsWon(6))
+        {
+            GameplayController.instance.SpawnNewBox();
+        }
     }
 
     void RestartGame()
@@ -100,14 +102,16 @@ public class BoxScript : MonoBehaviour
         {
             if (GameplayController.instance.CheckMoveCountIs0())
             {
-                Invoke("Landed", 1f);
+                AudioManager.instance.Play("Landed");
+                Invoke("Landed", 1.5f);
                 ignoreCollision = true;
             } 
         }
 
         if (target.gameObject.tag == "Box")
         {
-            Invoke("Landed", 1f);
+            AudioManager.instance.Play("Landed");
+            Invoke("Landed", 1.5f);
             ignoreCollision = true;
         }
 
@@ -119,13 +123,13 @@ public class BoxScript : MonoBehaviour
         if (ignoreTrigger)
             return;
 
-        if (target.tag == "GameOver" || (target.tag == "Platform" && !GameplayController.instance.CheckMoveCountIs0()))
+        if (target.tag == "GameOver")
         {
             CancelInvoke("Landed");
             gameOver = true;
             ignoreTrigger = true;
 
-            Invoke("RestartGame", 2f);
+            Invoke("RestartGame", 1.5f);
         }
 
     }

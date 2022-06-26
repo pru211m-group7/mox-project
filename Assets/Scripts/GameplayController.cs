@@ -22,6 +22,7 @@ public class GameplayController : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.Play("ThemeDroppingBox");
         box_Spawner.SpawnBox();
     }
 
@@ -52,10 +53,11 @@ public class GameplayController : MonoBehaviour
     {
 
         moveCount++;
+        ScoringBar.instance.IncrementScore(1f);
 
         if (moveCount == 6)
         {
-            RestartGame();
+            // RestartGame();
         }
 
     }
@@ -69,6 +71,15 @@ public class GameplayController : MonoBehaviour
     public bool CheckMoveCountIs0()
     {
         if (moveCount == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool CheckIsWon(int maxPoint)
+    {
+        if (moveCount == maxPoint)
         {
             return true;
         }
