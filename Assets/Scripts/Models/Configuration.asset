@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18643ae733b612b48b53a1cd394eda24, type: 3}
+  m_Name: Configuration
+  m_EditorClassIdentifier: 
+  Categories:
+  - CategoryName: Animal
+    Questions:
+    - Question: What is the biggest animal on Earth
+      Answers:
+      - Cat
+      - Dog
+      - Lion
+      - Whales
+      CorrectAnswerIndex: 4
+  - CategoryName: Animal
+    Questions:
+    - Question: What is the biggest animal on Earth
+      Answers:
+      - Cat
+      - Dog
+      - Lion
+      - Whales
+      CorrectAnswerIndex: 4
+  - CategoryName: Animal
+    Questions:
+    - Question: What is the biggest animal on Earth
+      Answers:
+      - Cat
+      - Dog
+      - Lion
+      - Whales
+      CorrectAnswerIndex: 4
