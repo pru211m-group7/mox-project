@@ -69,9 +69,10 @@ public class GameControl : MonoBehaviour
              //   prizeText.text = "Prize" + prizeValue;
                 resultChecked = true;
             }
-
+            
+            
         }
-        
+       
 
 
     }
@@ -83,6 +84,7 @@ public class GameControl : MonoBehaviour
             audioPlayer.Stop();
         }
     }
+    
     private IEnumerator PullHandle()
     {
         Debug.Log("Right");

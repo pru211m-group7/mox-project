@@ -7,7 +7,6 @@ public class Row : MonoBehaviour
 {
     private int randomValue;
     private float timeInterval;
-    public AudioSource audioPlayer;
 
     public bool rowStopped;
     public string stoppedSlot;
@@ -16,7 +15,7 @@ public class Row : MonoBehaviour
     {
         
         rowStopped = true;
-        audioPlayer = GetComponent<AudioSource>();
+     //   audioPlayer = GetComponent<AudioSource>();
         GameControl.HandlePulled += StartRotating;
 
     }
@@ -41,7 +40,6 @@ public class Row : MonoBehaviour
 
         }
          randomValue = Random.Range(60, 100);
-       // randomValue += 3 - (randomValue % 3);
         switch (randomValue % 3)
         {
             case 1:
@@ -71,70 +69,56 @@ public class Row : MonoBehaviour
         if (transform.position.y == -4.89f)
         {
             
-            stoppedSlot = "Diamond";
-            audioPlayer.Play();
+            stoppedSlot = "Boom";        
         }
 
         else if (transform.position.y == -4.01f)
 
         {
             
-            stoppedSlot = "Crown";
-            audioPlayer.Play();
+            stoppedSlot = "King";         
         }
         
 
         else if (transform.position.y == -3.27f)
-        {
-            audioPlayer.Play();
-            stoppedSlot = "Melonnnn";
+        {         
+            stoppedSlot = "Money";
         }
         
 
         else if (transform.position.y == -2.41f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Crown";
+            stoppedSlot = "Book";
         }
        
 
         else if (transform.position.y == -1.61f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Melon";
+            stoppedSlot = "Apple";
         }
-      //  stoppedSlot = "Melon";
 
         else if (transform.position.y == -0.81f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Bar";
+            stoppedSlot = "Medicine";
         }
-      //  stoppedSlot = "Bar";
 
         else if (transform.position.y == 0.03f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Seven";
+            stoppedSlot = "Leaf";
         }
-      //  stoppedSlot = "Seven";
 
         else if (transform.position.y == 0.83f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Cherry";
+            stoppedSlot = "Beef";
         }
-     //   stoppedSlot = "Cherry";
 
         else if (transform.position.y == 1.65f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Lemon";
+            stoppedSlot = "Fish";
         }
-      //  stoppedSlot = "Lemon";
 
         else if (transform.position.y == 2.41f)
-            stoppedSlot = "Dia";
+            stoppedSlot = "Mushroom";
         rowStopped = true;
         
     }
