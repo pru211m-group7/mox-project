@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BackgroundGame.unity
     guid: 1f9d694d273473a439d84524a31763fa
@@ -20,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlotMachineDemo.unity
     guid: 90bc6273f568d4d49ba1c4941b6e6197
+  - enabled: 1
+    path: Assets/Scenes/Quiz.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
