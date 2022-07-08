@@ -13,9 +13,9 @@ public class Row : MonoBehaviour
 
     public void Start()
     {
-        
+
         rowStopped = true;
-     //   audioPlayer = GetComponent<AudioSource>();
+        //   audioPlayer = GetComponent<AudioSource>();
         GameControl.HandlePulled += StartRotating;
 
     }
@@ -30,16 +30,16 @@ public class Row : MonoBehaviour
     {
         rowStopped = false;
         timeInterval = 0.05f;
-        for(int i = 0; i <15; i++)
+        for (int i = 0; i < 15; i++)
         {
             if (transform.position.y <= -4.8f)
                 transform.position = new Vector2(transform.position.x, 2.53f);
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.81f);
             yield return new WaitForSeconds(timeInterval);
-            
+
 
         }
-         randomValue = Random.Range(60, 100);
+        randomValue = Random.Range(60, 100);
         switch (randomValue % 3)
         {
             case 1:
@@ -50,7 +50,7 @@ public class Row : MonoBehaviour
                 break;
         }
 
-        for (int i = 0; i<randomValue; i++)
+        for (int i = 0; i < randomValue; i++)
         {
             if (transform.position.y <= -4.8f)
                 transform.position = new Vector2(transform.position.x, 2.53f);
@@ -64,40 +64,40 @@ public class Row : MonoBehaviour
             if (i > Mathf.RoundToInt(randomValue * 1.25f))
                 timeInterval = 0.1f;
             yield return new WaitForSeconds(timeInterval);
-            
+
         }
-        if (transform.position.y == -4.89f)
+        if (transform.position.y >= -5f && transform.position.y <= -4.64f)
         {
-            
-            stoppedSlot = "Boom";        
+
+            stoppedSlot = "Boom";
         }
 
-        else if (transform.position.y == -4.01f)
+        else if (transform.position.y >= -4.3f && transform.position.y <= -3.9f)
 
         {
-            
-            stoppedSlot = "King";         
-        }
-        
 
-        else if (transform.position.y == -3.27f)
-        {         
+            stoppedSlot = "King";
+        }
+
+
+        else if (transform.position.y >= -3.27f && transform.position.y <= -3.0f)
+        {
             stoppedSlot = "Money";
         }
-        
 
-        else if (transform.position.y == -2.41f)
+
+        else if (transform.position.y >= -2.65f && transform.position.y <= -2.2f)
         {
             stoppedSlot = "Book";
         }
-       
 
-        else if (transform.position.y == -1.61f)
+
+        else if (transform.position.y >= -1.8 && transform.position.y <= -1.4f)
         {
             stoppedSlot = "Apple";
         }
 
-        else if (transform.position.y == -0.81f)
+        else if (transform.position.y >= -0.95 && transform.position.y == -0.6f)
         {
             stoppedSlot = "Medicine";
         }
@@ -120,7 +120,7 @@ public class Row : MonoBehaviour
         else if (transform.position.y == 2.41f)
             stoppedSlot = "Mushroom";
         rowStopped = true;
-        
+
     }
     private void OnDestroy()
     {
