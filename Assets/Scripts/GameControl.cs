@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour
     [SerializeField]
     private GameObject textLose;
     [SerializeField]
-    private Text win;
+    private GameObject textWin;
     [SerializeField]
     private Image imageTitle;
     [SerializeField]
@@ -43,8 +43,8 @@ public class GameControl : MonoBehaviour
         if (resultChecked == false)
         {
 
-
-            win.enabled = false;
+            textWin.SetActive(false);
+          //  win.enabled = false;
             textLose.SetActive(false);
 
             resultChecked = true;
@@ -57,9 +57,13 @@ public class GameControl : MonoBehaviour
             {
                 textLose.SetActive(false);
             }
-            if (win.enabled == true)
+            /*if (win.enabled == true)
             {
                 win.enabled = false;
+            }*/
+            if (textWin.activeSelf == true)
+            {
+                textWin.SetActive(false);
             }
             IstartProgram = true;
         }
@@ -115,98 +119,116 @@ public class GameControl : MonoBehaviour
         //***********************BOOM*****************************//
         if (rows[0].stoppedSlot == "Boom" && rows[1].stoppedSlot == "Boom" || rows[2].stoppedSlot == "Boom" && rows[3].stoppedSlot == "Boom")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+           // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Boom" && rows[2].stoppedSlot == "Boom" || rows[1].stoppedSlot == "Boom" && rows[3].stoppedSlot == "Boom")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Boom" && rows[3].stoppedSlot == "Boom" || rows[1].stoppedSlot == "Boom" && rows[2].stoppedSlot == "Boom")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         //***********************KING****************************//
         if (rows[0].stoppedSlot == "King" && rows[1].stoppedSlot == "King" || rows[2].stoppedSlot == "King" && rows[3].stoppedSlot == "King")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "King" && rows[2].stoppedSlot == "King" || rows[1].stoppedSlot == "King" && rows[3].stoppedSlot == "King")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "King" && rows[3].stoppedSlot == "King" || rows[1].stoppedSlot == "King" && rows[2].stoppedSlot == "King")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         //***********************BOOK****************************//
         if (rows[0].stoppedSlot == "Book" && rows[1].stoppedSlot == "Book" || rows[2].stoppedSlot == "Book" && rows[3].stoppedSlot == "Book")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Book" && rows[2].stoppedSlot == "Book" || rows[1].stoppedSlot == "Book" && rows[3].stoppedSlot == "Book")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Book" && rows[3].stoppedSlot == "Book" || rows[1].stoppedSlot == "Book" && rows[2].stoppedSlot == "Book")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
 
         //***********************MONEY****************************//
         if (rows[0].stoppedSlot == "Money" && rows[1].stoppedSlot == "Money" || rows[2].stoppedSlot == "Money" && rows[3].stoppedSlot == "Money")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Money" && rows[2].stoppedSlot == "Money" || rows[1].stoppedSlot == "Money" && rows[3].stoppedSlot == "Money")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Money" && rows[3].stoppedSlot == "Money" || rows[1].stoppedSlot == "Money" && rows[2].stoppedSlot == "Money")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         //***********************APPLE****************************//
         if (rows[0].stoppedSlot == "Apple" && rows[1].stoppedSlot == "Apple" || rows[2].stoppedSlot == "Apple" && rows[3].stoppedSlot == "Apple")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Apple" && rows[2].stoppedSlot == "Apple" || rows[1].stoppedSlot == "Apple" && rows[3].stoppedSlot == "Apple")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Apple" && rows[3].stoppedSlot == "Apple" || rows[1].stoppedSlot == "Apple" && rows[2].stoppedSlot == "Apple")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         //***********************MEDICINE****************************//
         if (rows[0].stoppedSlot == "Medicine" && rows[1].stoppedSlot == "Medicine" || rows[2].stoppedSlot == "Medicine" && rows[3].stoppedSlot == "Medicine")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Medicine" && rows[2].stoppedSlot == "Medicine" || rows[1].stoppedSlot == "Medicine" && rows[3].stoppedSlot == "Medicine")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
         else if (rows[0].stoppedSlot == "Medicine" && rows[3].stoppedSlot == "Medicine" || rows[1].stoppedSlot == "Medicine" && rows[2].stoppedSlot == "Medicine")
         {
-            win.enabled = true;
+            textWin.SetActive(true);
+            // win.enabled = true;
             textLose.SetActive(false);
         }
 
