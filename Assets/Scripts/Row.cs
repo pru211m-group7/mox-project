@@ -92,32 +92,32 @@ public class Row : MonoBehaviour
         }
 
 
-        else if (transform.position.y >= -1.8 && transform.position.y <= -1.4f)
+        else if (transform.position.y >= -1.9 && transform.position.y <= -1.3f)
         {
             stoppedSlot = "Apple";
         }
 
-        else if (transform.position.y >= -0.95 && transform.position.y == -0.6f)
+        else if (transform.position.y >= -1.0 && transform.position.y <= -0.41f)
         {
             stoppedSlot = "Medicine";
         }
 
-        else if (transform.position.y == 0.03f)
+        else if (transform.position.y >= -0.31f && transform.position.y <= 0.36f)
         {
             stoppedSlot = "Leaf";
         }
 
-        else if (transform.position.y == 0.83f)
+        else if (transform.position.y >= 0.46f && transform.position.y <= 1.15f)
         {
             stoppedSlot = "Beef";
         }
 
-        else if (transform.position.y == 1.65f)
+        else if (transform.position.y >= 1.29f && transform.position.y <= 2.05f)
         {
             stoppedSlot = "Fish";
         }
 
-        else if (transform.position.y == 2.41f)
+        else if (transform.position.y >= 2.08f && transform.position.y <= 2.8f)
             stoppedSlot = "Mushroom";
         rowStopped = true;
 
