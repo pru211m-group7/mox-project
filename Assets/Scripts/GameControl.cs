@@ -13,8 +13,9 @@ public class GameControl : MonoBehaviour
     private AudioSource audioPlayer;
 
     [SerializeField]
-    private GameObject prizeText;
-    
+    private GameObject textLose;
+    [SerializeField]
+    private GameObject textWin;
     [SerializeField]
     private Image imageTitle;
     [SerializeField]
@@ -22,38 +23,48 @@ public class GameControl : MonoBehaviour
 
     [SerializeField]
     private Transform handle;
-    private int prizeValue;
+    //   private int prizeValue;
     private bool resultChecked = false;
     private bool IstartProgram = false;
 
     /* GameControl()
      {
-         prizeText.enabled = false;
+         textLose.enabled = false;
      } */
 
     public void Start()
     {
         audioPlayer = GetComponent<AudioSource>();
-       
+
     }
     public void Update()
     {
-        
+
         if (resultChecked == false)
         {
-            
-            prizeText.SetActive(false) ;
-            
+
+            textWin.SetActive(false);
+          //  win.enabled = false;
+            textLose.SetActive(false);
+
             resultChecked = true;
         }
 
         if (!rows[0].rowStopped || !rows[1].rowStopped || !rows[2].rowStopped || !rows[3].rowStopped)
         {
-            prizeValue = 0;
-                if(prizeText.activeSelf == true)
-                {
-                    prizeText.SetActive(false);
-                }
+
+            if (textLose.activeSelf == true)
+            {
+                textLose.SetActive(false);
+            }
+            /*if (win.enabled == true)
+            {
+                win.enabled = false;
+            }*/
+            if (textWin.activeSelf == true)
+            {
+                textWin.SetActive(false);
+            }
             IstartProgram = true;
         }
 
@@ -64,16 +75,18 @@ public class GameControl : MonoBehaviour
             if (IstartProgram == true)
             {
                 Thread.Sleep(700);
-                IstartProgram = false;
-                prizeText.SetActive(true);
-             //   prizeText.text = "Prize" + prizeValue;
+                textLose.SetActive(true);
+                CheckResults();
                 resultChecked = true;
+                IstartProgram = false;
             }
-
         }
-        
-
-
+        /*        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && rows[3].rowStopped && !resultChecked)
+                {
+                    audioPlayer.Stop();
+                    CheckResults();
+                    win.enabled = true;
+                }*/
     }
     private void OnMouseDown()
     {
@@ -83,40 +96,42 @@ public class GameControl : MonoBehaviour
             audioPlayer.Stop();
         }
     }
+
     private IEnumerator PullHandle()
     {
         Debug.Log("Right");
-        for(int i = 0; i < 15; i += 5)
+        for (int i = 0; i < 15; i += 5)
         {
             handle.Rotate(0f, 0f, i);
             yield return new WaitForSeconds(0.1f);
         }
         audioPlayer.Play();
         HandlePulled();
-        for(int i = 0; i < 15; i += 5)
+        for (int i = 0; i < 15; i += 5)
         {
             handle.Rotate(0f, 0f, -i);
             yield return new WaitForSeconds(0.1f);
         }
-        
+
     }
     private void CheckResults()
     {
-/*        if (rows[0].stoppedSlot == "Diamond" && rows[1].stoppedSlot == "Diamond" && rows[2].stoppedSlot == "Diamond")
-            prizeValue = 200;
-        else if (rows[0].stoppedSlot == "Crown" && rows[1].stoppedSlot == "Crown" && rows[2].stoppedSlot == "Crown")
-            prizeValue = 400;
-        else if (rows[0].stoppedSlot == "Melon" && rows[1].stoppedSlot == "Melon" && rows[2].stoppedSlot == "Melon")
-            prizeValue = 600;
-        else if (rows[0].stoppedSlot == "Bar" && rows[1].stoppedSlot == "Bar" && rows[2].stoppedSlot == "Bar")
-            prizeValue = 800;
-        else if (rows[0].stoppedSlot == "Seven" && rows[1].stoppedSlot == "Seven" && rows[2].stoppedSlot == "Seven")
-            prizeValue = 1500;
-        else if (rows[0].stoppedSlot == "Cherry" && rows[1].stoppedSlot == "Cherry" && rows[2].stoppedSlot == "Cherry")
-            prizeValue = 3000;
-        else if (rows[0].stoppedSlot == "Lemon" && rows[1].stoppedSlot == "Lemon" && rows[2].stoppedSlot == "Lemon")
-            prizeValue = 5000;*/
-        resultChecked = true;
+        int i = 0;
+        for(int j=3; j >= i+1; j--)
+        {
+            if (rows[i].stoppedSlot == rows[j].stoppedSlot)
+            {
+                textWin.SetActive(true);
+                textLose.SetActive(false);
+                break;
+            }
+
+            if ((j == i+1) && (i < 3))
+            {
+                i++;
+                j = 4;
+            }
+        }
     }
 
 }

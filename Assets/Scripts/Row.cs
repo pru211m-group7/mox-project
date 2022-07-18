@@ -7,16 +7,15 @@ public class Row : MonoBehaviour
 {
     private int randomValue;
     private float timeInterval;
-    public AudioSource audioPlayer;
 
     public bool rowStopped;
     public string stoppedSlot;
 
     public void Start()
     {
-        
+
         rowStopped = true;
-        audioPlayer = GetComponent<AudioSource>();
+        //   audioPlayer = GetComponent<AudioSource>();
         GameControl.HandlePulled += StartRotating;
 
     }
@@ -31,112 +30,88 @@ public class Row : MonoBehaviour
     {
         rowStopped = false;
         timeInterval = 0.05f;
-        for(int i = 0; i <15; i++)
+     /*   for (int i = 0; i < 15; i++)
         {
             if (transform.position.y <= -4.8f)
                 transform.position = new Vector2(transform.position.x, 2.53f);
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.81f);
             yield return new WaitForSeconds(timeInterval);
-            
 
-        }
-         randomValue = Random.Range(60, 100);
-       // randomValue += 3 - (randomValue % 3);
-        switch (randomValue % 3)
-        {
-            case 1:
-                randomValue += 2;
-                break;
-            case 2:
-                randomValue += 1;
-                break;
-        }
+        }*/
+        randomValue = Random.Range(60, 100);
+       
 
-        for (int i = 0; i<randomValue; i++)
+        for (int i = 0; i < randomValue; i++)
         {
             if (transform.position.y <= -4.8f)
                 transform.position = new Vector2(transform.position.x, 2.53f);
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.81f);
             if (i > Mathf.RoundToInt(randomValue * 0.5f))
-                timeInterval = 0.08f;
-            if (i > Mathf.RoundToInt(randomValue * 0.75f))
                 timeInterval = 0.09f;
+            if (i > Mathf.RoundToInt(randomValue * 0.75f))
+                timeInterval = 0.1f;
             if (i > Mathf.RoundToInt(randomValue * 0.1f))
-                timeInterval = 0.1f;
+                timeInterval = 0.11f;
             if (i > Mathf.RoundToInt(randomValue * 1.25f))
-                timeInterval = 0.1f;
+                timeInterval = 0.12f;
             yield return new WaitForSeconds(timeInterval);
-            
+
         }
-        if (transform.position.y == -4.89f)
+        if (transform.position.y >= -5f && transform.position.y <= -4.64f)
         {
-            
-            stoppedSlot = "Diamond";
-            audioPlayer.Play();
+
+            stoppedSlot = "Boom";
         }
 
-        else if (transform.position.y == -4.01f)
+        else if (transform.position.y >= -4.3f && transform.position.y <= -3.9f)
 
         {
-            
-            stoppedSlot = "Crown";
-            audioPlayer.Play();
-        }
-        
 
-        else if (transform.position.y == -3.27f)
+            stoppedSlot = "King";
+        }
+
+
+        else if (transform.position.y >= -3.27f && transform.position.y <= -3.0f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Melonnnn";
+            stoppedSlot = "Money";
         }
-        
 
-        else if (transform.position.y == -2.41f)
+
+        else if (transform.position.y >= -2.65f && transform.position.y <= -2.2f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Crown";
+            stoppedSlot = "Book";
         }
-       
 
-        else if (transform.position.y == -1.61f)
+
+        else if (transform.position.y >= -1.9 && transform.position.y <= -1.3f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Melon";
+            stoppedSlot = "Apple";
         }
-      //  stoppedSlot = "Melon";
 
-        else if (transform.position.y == -0.81f)
+        else if (transform.position.y >= -1.0 && transform.position.y <= -0.41f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Bar";
+            stoppedSlot = "Medicine";
         }
-      //  stoppedSlot = "Bar";
 
-        else if (transform.position.y == 0.03f)
+        else if (transform.position.y >= -0.31f && transform.position.y <= 0.36f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Seven";
+            stoppedSlot = "Leaf";
         }
-      //  stoppedSlot = "Seven";
 
-        else if (transform.position.y == 0.83f)
+        else if (transform.position.y >= 0.46f && transform.position.y <= 1.15f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Cherry";
+            stoppedSlot = "Beef";
         }
-     //   stoppedSlot = "Cherry";
 
-        else if (transform.position.y == 1.65f)
+        else if (transform.position.y >= 1.29f && transform.position.y <= 2.05f)
         {
-            audioPlayer.Play();
-            stoppedSlot = "Lemon";
+            stoppedSlot = "Fish";
         }
-      //  stoppedSlot = "Lemon";
 
-        else if (transform.position.y == 2.41f)
-            stoppedSlot = "Dia";
+        else if (transform.position.y >= 2.08f && transform.position.y <= 2.8f)
+            stoppedSlot = "Mushroom";
         rowStopped = true;
-        
+
     }
     private void OnDestroy()
     {

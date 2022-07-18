@@ -34,6 +34,7 @@ public class ScoringBar : MonoBehaviour
             }else if(slider.value == 6)
                 {
                 Popup popup = UIController.Instance.CreatePopup();
+                AudioManager.instance.Stop("ThemeDroppingBox");
                 popup.Init(UIController.Instance.MainCanvas);
                 this.enabled = false;
             }
