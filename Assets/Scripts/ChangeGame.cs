@@ -17,6 +17,7 @@ public class ChangeGame : MonoBehaviour
     public void CloseButon()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        
     }
     public void Quiz()
     {
@@ -26,5 +27,6 @@ public class ChangeGame : MonoBehaviour
     public void CollectButon()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        
     }
 }

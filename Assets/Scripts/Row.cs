@@ -30,15 +30,14 @@ public class Row : MonoBehaviour
     {
         rowStopped = false;
         timeInterval = 0.05f;
-        for (int i = 0; i < 15; i++)
+     /*   for (int i = 0; i < 15; i++)
         {
             if (transform.position.y <= -4.8f)
                 transform.position = new Vector2(transform.position.x, 2.53f);
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.81f);
             yield return new WaitForSeconds(timeInterval);
 
-
-        }
+        }*/
         randomValue = Random.Range(60, 100);
        
 
@@ -48,13 +47,13 @@ public class Row : MonoBehaviour
                 transform.position = new Vector2(transform.position.x, 2.53f);
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.81f);
             if (i > Mathf.RoundToInt(randomValue * 0.5f))
-                timeInterval = 0.08f;
-            if (i > Mathf.RoundToInt(randomValue * 0.75f))
                 timeInterval = 0.09f;
+            if (i > Mathf.RoundToInt(randomValue * 0.75f))
+                timeInterval = 0.1f;
             if (i > Mathf.RoundToInt(randomValue * 0.1f))
-                timeInterval = 0.1f;
+                timeInterval = 0.11f;
             if (i > Mathf.RoundToInt(randomValue * 1.25f))
-                timeInterval = 0.1f;
+                timeInterval = 0.12f;
             yield return new WaitForSeconds(timeInterval);
 
         }
