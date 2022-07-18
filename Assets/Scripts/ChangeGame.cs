@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeGame : MonoBehaviour
 {
-   public void DroppingBox()
+   public void BoxGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

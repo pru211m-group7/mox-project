@@ -15,8 +15,9 @@ public class Popup : MonoBehaviour
 
 
 
-    public void Init(Transform canvas)
+    public void Init(Transform canvas,string popupText)
     {
+        _popupText.text = popupText;
         transform.SetParent(canvas);
         transform.localScale = Vector3.one;
         transform.localPosition = Vector3.zero;
