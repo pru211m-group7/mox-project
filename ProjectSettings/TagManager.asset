@@ -9,6 +9,7 @@ TagManager:
   - GameOver
   - Box
   - ScoringBar
+  - Game Over
   layers:
   - Default
   - TransparentFX
