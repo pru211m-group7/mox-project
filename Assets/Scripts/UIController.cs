@@ -21,4 +21,10 @@ public Popup CreatePopup()
         GameObject popUpGo = Instantiate(Resources.Load("UI/Popup") as GameObject);
         return popUpGo.GetComponent<Popup>();
     }
+
+public PopupLose CreatePopupLose()
+{
+    GameObject popUpGo = Instantiate(Resources.Load("UI/PopupLose") as GameObject);
+    return popUpGo.GetComponent<PopupLose>();
+}
 }

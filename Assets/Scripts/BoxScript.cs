@@ -128,9 +128,9 @@ public class BoxScript : MonoBehaviour
             CancelInvoke("Landed");
             gameOver = true;
             ignoreTrigger = true;
-            Popup popup = UIController.Instance.CreatePopup();
+            PopupLose popupLose = UIController.Instance.CreatePopupLose();
             AudioManager.instance.Stop("ThemeDroppingBox");
-            popup.Init(UIController.Instance.MainCanvas, "You Lose :((");
+            popupLose.Init(UIController.Instance.MainCanvas, "You Lose :((");
             this.enabled = false;
         }
 
