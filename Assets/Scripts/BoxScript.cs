@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -128,8 +128,10 @@ public class BoxScript : MonoBehaviour
             CancelInvoke("Landed");
             gameOver = true;
             ignoreTrigger = true;
-
-            Invoke("RestartGame", 1.5f);
+            PopupLose popupLose = UIController.Instance.CreatePopupLose();
+            AudioManager.instance.Stop("ThemeDroppingBox");
+            popupLose.Init(UIController.Instance.MainCanvas, "You Lose :((");
+            this.enabled = false;
         }
 
     }

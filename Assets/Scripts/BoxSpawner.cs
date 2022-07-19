@@ -8,7 +8,8 @@ public class BoxSpawner : MonoBehaviour
     public void SpawnBox()
     {
         GameObject box_Obj = Instantiate(box_Prefab);
-
+        GameObject gameOver = GameObject.FindGameObjectWithTag("GameOver");
+        gameOver.transform.position = new Vector3(0, gameOver.transform.position.y + 1f, 0);
         Vector3 temp = transform.position;
         temp.z = 0f;
 

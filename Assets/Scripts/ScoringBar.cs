@@ -31,10 +31,19 @@ public class ScoringBar : MonoBehaviour
             if (!particleSystem.isPlaying)
             {
                 particleSystem.Play();
+            }else if(slider.value == 6)
+                {
+                Popup popup = UIController.Instance.CreatePopup();
+                AudioManager.instance.Stop("ThemeDroppingBox");
+                popup.Init(UIController.Instance.MainCanvas, "You Win!!!!");
+                this.enabled = false;
             }
-        } else
+        }
+        else 
         {
+         
             particleSystem.Stop();
+
         }
     }
 
